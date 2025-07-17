@@ -1,5 +1,5 @@
 # Ignorar volumes montados pelos containers
-volume_app/
+#volume_app/
 volume_data/
 
 # Ignorar arquivos de log
