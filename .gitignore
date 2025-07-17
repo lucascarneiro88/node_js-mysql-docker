@@ -1,0 +1,16 @@
+# Ignorar volumes montados pelos containers
+volume_app/
+volume_data/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar node_modules caso venha a instalar dependências no host
+node_modules/
+
+# Ignorar arquivos do sistema
+.DS_Store
+Thumbs.db
