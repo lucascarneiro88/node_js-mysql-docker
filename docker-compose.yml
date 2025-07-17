@@ -17,7 +17,23 @@ services:
       - nodejs_network # conecta o container à rede definida abaixo
 
 
-networks:
+# servico mysql
+  nodejs_mysql:
+     image: mysql:8.4.5
+     container_name: nodejs_mysql
+     environment:
+        MYSQL_ROOT_PASSWORD: root # senha do usuário root do MySQL
+     ports:
+        - "3306:3306" # mapeia a porta 3306 do host para a porta 3306 do container
+     volumes:
+        - ./volume_data:/var/lib/mysql # mapeia o volume de dados do MySQL
+     networks:
+        - nodejs_network # conecta o container à mesma rede do serviço Node.js
+
+
+networks: # rede para os containers
   nodejs_network: # nome da rede
     driver: bridge # tipo de rede, neste caso, uma rede bridge
     name: nodejs_network # nome da rede
+
+
